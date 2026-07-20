@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="江苏众拓项目代理咨询有限公司——综合性专业土地服务集团，做投资者的「项目部」。项目审批代理、咨询报告编制、房地产/土地/资产评估、工程测绘、国土空间规划、土地整治、林业服务。90+专业人员，6家直属企业，60+代表性项目。">
+<meta name="keywords" content="江苏众拓,项目代理咨询,工程造价,招标代理,房地产评估,土地评估,资产评估,测绘,土地整治,规划编制,社会稳定风险评估,淮安">
+<title>江苏众拓项目代理咨询有限公司 | 做投资者的「项目部」</title>
+<link rel="icon" href="assets/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+<style>
+/* ============ 基础变量 ============ */
+:root{
+  --ink:#1A1A1A;
+  --ink-2:#2C3338;
+  --ink-3:#3A4248;
+  --muted:#6B7280;
+  --muted-2:#9CA3AF;
+  --line:#E5E7EB;
+  --line-2:#D1D5DB;
+  --soft:#F7F7F4;
+  --soft-2:#EFEFEC;
+  --paper:#FFFFFF;
+  --accent:#8B3A3A;
+  --accent-2:#A85A5A;
+  --accent-3:#6B2A2A;
+  --accent-bg:#F5F0F0;
+  --shadow-sm:0 2px 8px rgba(0,0,0,.06);
+  --shadow-md:0 8px 30px rgba(0,0,0,.10);
+  --shadow-lg:0 20px 60px rgba(0,0,0,.15);
+  --nav-h:72px;
+  --maxw:1200px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink-2);background:var(--paper);line-height:1.7;overflow-x:hidden;}
+.serif{font-family:"Noto Serif SC",serif;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+/* ============ 滚动渐入 ============ */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);}
+.reveal.in{opacity:1;transform:none;}
+.reveal.d1{transition-delay:.1s;}
+.reveal.d2{transition-delay:.2s;}
+.reveal.d3{transition-delay:.3s;}
+.reveal.d4{transition-delay:.4s;}
+
+/* ============ 导航栏 ============ */
+.nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1000;display:flex;align-items:center;background:rgba(255,255,255,0);backdrop-filter:blur(0);border-bottom:1px solid transparent;transition:background .4s,backdrop-filter .4s,border-color .4s,box-shadow .4s;}
+.nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom-color:var(--line);box-shadow:0 2px 20px rgba(0,0,0,.05);}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;width:100%;display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{display:flex;align-items:center;gap:12px;}
+.nav-logo{height:44px;width:auto;}
+.nav-brand .name{display:flex;flex-direction:column;line-height:1.1;}
+.nav-brand .cn{font-family:"Noto Serif SC",serif;font-weight:900;font-size:18px;color:#fff;letter-spacing:2px;transition:color .4s;}
+.nav-brand .en{font-size:9px;color:rgba(255,255,255,.7);letter-spacing:3px;font-weight:700;margin-top:2px;transition:color .4s;}
+.nav.scrolled .nav-brand .cn{color:var(--ink-2);}
+.nav.scrolled .nav-brand .en{color:var(--muted);}
+.nav-menu{display:flex;align-items:center;gap:6px;}
+.nav-menu a{color:rgba(255,255,255,.85);font-size:14px;font-weight:500;padding:8px 14px;border-radius:4px;letter-spacing:1px;transition:color .3s,background .3s;position:relative;}
+.nav.scrolled .nav-menu a{color:var(--ink-3);}
+.nav-menu a:hover{color:#fff;background:rgba(255,255,255,.12);}
+.nav.scrolled .nav-menu a:hover{color:var(--accent);background:var(--accent-bg);}
+.nav-menu a.active{color:#fff;}
+.nav.scrolled .nav-menu a.active{color:var(--accent);}
+.nav-menu a.active::after{content:"";position:absolute;left:50%;bottom:2px;transform:translateX(-50%);width:20px;height:2px;background:var(--accent);}
+.nav-cta{background:var(--accent);color:#fff !important;padding:9px 20px !important;border-radius:3px;font-weight:700;letter-spacing:2px;font-size:13px;transition:background .3s,transform .3s;}
+.nav-cta:hover{background:var(--accent-3);transform:translateY(-1px);}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.nav-toggle span{width:24px;height:2px;background:#fff;transition:all .3s;}
+.nav.scrolled .nav-toggle span{background:var(--ink-2);}
+.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-toggle.open span:nth-child(2){opacity:0;}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* ============ Hero ============ */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,#1f2428 0%,#2C3338 50%,#1a1f23 100%);color:#fff;overflow:hidden;}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 20% 30%,rgba(139,58,58,.18) 0%,transparent 50%),radial-gradient(circle at 80% 70%,rgba(139,58,58,.10) 0%,transparent 50%);}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);}
+.hero-inner{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:120px 24px 80px;width:100%;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:6px;color:var(--accent-2);font-weight:700;margin-bottom:24px;text-transform:uppercase;}
+.hero-eyebrow::before{content:"";width:32px;height:1px;background:var(--accent-2);}
+.hero h1{font-family:"Noto Serif SC",serif;font-weight:900;font-size:clamp(40px,7vw,82px);line-height:1.1;letter-spacing:2px;margin-bottom:8px;}
+.hero h1 .accent{color:var(--accent-2);}
+.hero-en{font-size:clamp(11px,1.4vw,15px);letter-spacing:3px;color:rgba(255,255,255,.5);margin-bottom:36px;font-weight:300;}
+.hero-slogan{display:inline-block;padding:18px 28px;border-left:3px solid var(--accent-2);background:rgba(255,255,255,.04);backdrop-filter:blur(4px);margin-bottom:40px;}
+.hero-slogan .cn{font-size:clamp(20px,2.6vw,28px);font-weight:500;letter-spacing:3px;color:#fff;}
+.hero-slogan .sub{font-size:13px;color:rgba(255,255,255,.6);margin-top:8px;letter-spacing:2px;}
+.hero-tags{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;max-width:880px;margin-bottom:48px;}
+.hero-tag{padding:14px 18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--accent-2);font-size:14px;color:rgba(255,255,255,.9);transition:background .3s,transform .3s;cursor:default;}
+.hero-tag:hover{background:rgba(139,58,58,.18);transform:translateX(4px);border-left-color:#fff;}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;font-size:15px;font-weight:700;letter-spacing:2px;border-radius:3px;cursor:pointer;transition:all .3s;border:none;font-family:inherit;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent-3);transform:translateY(-2px);box-shadow:0 10px 30px rgba(139,58,58,.4);}
+.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);}
+.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff;}
+.hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.5);font-size:11px;letter-spacing:3px;text-align:center;animation:bob 2s ease-in-out infinite;}
+.hero-scroll::after{content:"";display:block;width:1px;height:40px;background:rgba(255,255,255,.3);margin:10px auto 0;}
+@keyframes bob{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,8px);}}
+
+/* ============ section ============ */
+.section{padding:100px 0;position:relative;}
+.section.alt{background:var(--soft);}
+.section.dark{background:var(--ink-2);color:#E5E7EB;}
+.sec-head{text-align:center;margin-bottom:60px;}
+.sec-eyebrow{font-size:12px;letter-spacing:6px;color:var(--accent);font-weight:700;text-transform:uppercase;margin-bottom:14px;display:inline-flex;align-items:center;gap:10px;}
+.sec-eyebrow::before,.sec-eyebrow::after{content:"";width:30px;height:1px;background:var(--accent);}
+.sec-title{font-family:"Noto Serif SC",serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--ink-2);letter-spacing:2px;line-height:1.2;}
+.sec-title .accent{color:var(--accent);}
+.sec-sub{font-size:15px;color:var(--muted);margin-top:14px;letter-spacing:1px;}
+.section.dark .sec-title{color:#fff;}
+.section.dark .sec-sub{color:var(--muted-2);}
+
+/* ============ 集团概况 ============ */
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;}
+.about-text p{font-size:16px;color:var(--ink-3);line-height:1.9;margin-bottom:18px;text-align:justify;}
+.about-text .key{color:var(--accent);font-weight:700;}
+.about-text b{color:var(--ink-2);font-weight:700;}
+.about-vision{margin-top:28px;padding:24px 28px;background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--accent);box-shadow:var(--shadow-sm);}
+.about-vision .lbl{font-size:12px;color:var(--accent);letter-spacing:3px;font-weight:700;margin-bottom:10px;}
+.about-vision .tx{font-size:16px;color:var(--ink-3);line-height:1.8;}
+.about-vision .tx b{color:var(--ink-2);}
+.stats-row{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.stat-card{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--ink-2);padding:28px 24px;text-align:center;transition:transform .3s,box-shadow .3s;}
+.stat-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-top-color:var(--accent);}
+.stat-card .n{font-family:"Noto Serif SC",serif;font-size:46px;font-weight:900;color:var(--ink-2);line-height:1;}
+.stat-card .n small{font-size:20px;color:var(--accent);font-weight:700;margin-left:2px;}
+.stat-card .l{font-size:13px;color:var(--muted);margin-top:10px;letter-spacing:2px;}
+
+/* ============ 业务阶段（简洁）============ */
+.bs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.bs-card{background:var(--paper);border:1px solid var(--line);padding:32px 26px;position:relative;overflow:hidden;transition:all .35s;}
+.bs-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--ink-2);transition:background .35s;}
+.bs-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:transparent;}
+.bs-card:hover::before{background:var(--accent);}
+.bs-num{font-family:"Noto Serif SC",serif;font-size:36px;font-weight:900;color:var(--accent-bg);line-height:1;margin-bottom:16px;transition:color .35s;}
+.bs-card:hover .bs-num{color:var(--accent);}
+.bs-title{font-family:"Noto Serif SC",serif;font-size:18px;font-weight:900;color:var(--ink-2);margin-bottom:10px;}
+.bs-desc{font-size:14px;color:var(--muted);line-height:1.7;}
+@media(max-width:768px){.bs-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.bs-grid{grid-template-columns:1fr;}}
+
+/* ============ 资质实力 ============ */
+.qual-block{margin-bottom:40px;}
+.qual-block-title{font-family:"Noto Serif SC",serif;font-size:20px;font-weight:900;color:var(--ink-2);margin-bottom:20px;display:flex;align-items:center;gap:10px;padding-left:14px;border-left:4px solid var(--accent);}
+.qual-block-title .cnt{font-size:13px;color:var(--muted);font-weight:400;letter-spacing:1px;}
+.qual-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;}
+.qual-item{background:var(--paper);border:1px solid var(--line);padding:20px 18px;transition:transform .3s,box-shadow .3s;border-left:3px solid var(--accent);}
+.qual-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.qual-item .lvl{font-family:"Noto Serif SC",serif;font-size:22px;font-weight:900;color:var(--accent);margin-bottom:6px;}
+.qual-item .nm{font-size:13px;color:var(--ink-3);font-weight:500;line-height:1.5;}
+.qual-item .issuer{font-size:11px;color:var(--muted-2);margin-top:6px;letter-spacing:0.5px;}
+.talent-equip{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.te-box{background:var(--paper);border:1px solid var(--line);padding:32px 28px;}
+.te-box .lbl{font-size:13px;color:var(--accent);letter-spacing:3px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.te-box .lbl::before{content:"";width:4px;height:16px;background:var(--accent);}
+.te-row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px dashed var(--line);font-size:14.5px;}
+.te-row:last-child{border:none;}
+.te-row .k{color:var(--ink-3);}
+.te-row .v{font-family:"Noto Serif SC",serif;font-weight:900;color:var(--ink-2);font-size:17px;}
+.te-row .v small{font-size:12px;color:var(--accent);font-weight:500;margin-left:2px;}
+.te-row .v.txt{font-size:13px;font-family:inherit;font-weight:500;color:var(--ink-3);}
+
+/* ============ 直属企业 ============ */
+.sub-intro{text-align:center;max-width:760px;margin:0 auto 48px;font-size:15px;color:var(--muted);line-height:1.9;}
+.sub-core-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;}
+.sub-card{background:var(--paper);border:1px solid var(--line);padding:36px 32px;position:relative;overflow:hidden;transition:transform .4s,box-shadow .4s;}
+.sub-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--ink-2);}
+.sub-card.right::before{background:var(--accent);}
+.sub-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+.sub-badge{font-size:12px;color:var(--accent);letter-spacing:3px;font-weight:700;margin-bottom:12px;}
+.sub-name{font-family:"Noto Serif SC",serif;font-size:20px;font-weight:900;color:var(--ink-2);line-height:1.4;margin-bottom:10px;}
+.sub-position{font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.7;}
+.sub-meta{display:flex;gap:24px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:18px;flex-wrap:wrap;}
+.sub-meta .item .k{font-size:11px;color:var(--muted-2);letter-spacing:2px;}
+.sub-meta .item .v{font-family:"Noto Serif SC",serif;font-size:20px;font-weight:900;color:var(--ink-2);margin-top:4px;}
+.sub-qlbl{font-size:12px;color:var(--muted);letter-spacing:2px;font-weight:700;margin-bottom:10px;}
+.sub-qlist .r{font-size:13px;color:var(--ink-3);padding:7px 0;border-bottom:1px dashed var(--line);line-height:1.6;}
+.sub-qlist .r:last-child{border:none;}
+.sub-qlist .r b{color:var(--accent);font-weight:700;margin-right:6px;}
+.sub-biz-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.sub-biz-tags span{font-size:12px;padding:5px 12px;background:var(--accent-bg);color:var(--accent-3);border-radius:2px;font-weight:500;}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;}
+.related-card{background:var(--paper);border:1px solid var(--line);padding:18px 20px;display:flex;align-items:center;gap:14px;transition:transform .3s,box-shadow .3s;border-left:3px solid var(--ink-2);}
+.related-card:hover{transform:translateX(4px);box-shadow:var(--shadow-sm);}
+.related-card .ic{width:38px;height:38px;background:var(--soft);color:var(--ink-2);display:flex;align-items:center;justify-content:center;font-family:"Noto Serif SC",serif;font-weight:900;font-size:16px;flex-shrink:0;border-radius:3px;}
+.related-card .nm{font-size:14px;color:var(--ink-2);font-weight:500;line-height:1.4;}
+
+/* ============ 典型案例 ============ */
+.case-filter{display:flex;justify-content:center;gap:8px;margin-bottom:40px;flex-wrap:wrap;}
+.case-btn{padding:8px 18px;font-size:13px;background:var(--paper);border:1px solid var(--line);color:var(--ink-3);cursor:pointer;border-radius:3px;transition:all .3s;font-family:inherit;letter-spacing:1px;}
+.case-btn:hover{border-color:var(--accent);color:var(--accent);}
+.case-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+.case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+.case-card{background:var(--paper);border:1px solid var(--line);padding:26px 24px;position:relative;overflow:hidden;transition:transform .4s,box-shadow .4s,border-color .4s;display:flex;flex-direction:column;}
+.case-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);transform:scaleY(0);transform-origin:top;transition:transform .4s;}
+.case-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+.case-card:hover::before{transform:scaleY(1);}
+.case-type{font-size:11px;color:var(--accent);letter-spacing:2px;font-weight:700;margin-bottom:10px;}
+.case-name{font-family:"Noto Serif SC",serif;font-size:16px;font-weight:700;color:var(--ink-2);line-height:1.45;margin-bottom:12px;min-height:46px;}
+.case-data{font-size:13.5px;color:var(--ink-3);line-height:1.7;flex:1;}
+.case-data b{color:var(--accent);font-weight:700;}
+.case-tag{position:absolute;top:18px;right:18px;font-size:10px;color:var(--muted-2);border:1px solid var(--line);padding:2px 9px;border-radius:2px;letter-spacing:1px;}
+
+/* ============ 质量与服务 ============ */
+.qm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-bottom:48px;}
+.qm-card{background:var(--paper);border:1px solid var(--line);padding:32px 24px;text-align:center;transition:transform .3s,box-shadow .3s;border-top:3px solid var(--accent);}
+.qm-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+.qm-icon{width:56px;height:56px;border-radius:50%;background:var(--accent-bg);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 18px;transition:all .35s;}
+.qm-card:hover .qm-icon{background:var(--accent);color:#fff;transform:scale(1.08);}
+.qm-title{font-family:"Noto Serif SC",serif;font-size:17px;font-weight:900;color:var(--ink-2);margin-bottom:10px;}
+.qm-desc{font-size:13.5px;color:var(--muted);line-height:1.7;}
+.flow-wrap{background:var(--paper);border:1px solid var(--line);padding:40px 32px;}
+.flow-title{font-family:"Noto Serif SC",serif;font-size:20px;font-weight:900;color:var(--ink-2);text-align:center;margin-bottom:30px;}
+.flow-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+.flow-step{text-align:center;padding:0 16px;position:relative;}
+.flow-step:not(:last-child)::after{content:"→";position:absolute;right:-10px;top:0;font-size:24px;color:var(--accent);font-weight:700;}
+.flow-num{width:48px;height:48px;border-radius:50%;background:var(--ink-2);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Noto Serif SC",serif;font-weight:900;font-size:18px;margin:0 auto 16px;transition:background .3s;}
+.flow-step:hover .flow-num{background:var(--accent);}
+.flow-name{font-size:16px;font-weight:700;color:var(--ink-2);margin-bottom:8px;}
+.flow-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+.qm-slogan{text-align:center;margin-top:36px;font-family:"Noto Serif SC",serif;font-size:22px;font-weight:900;color:var(--accent);letter-spacing:4px;}
+
+/* ============ 联系我们 ============ */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.contact-info .ci-item{display:flex;align-items:flex-start;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);}
+.contact-info .ci-item:last-child{border:none;}
+.ci-icon{width:46px;height:46px;border:2px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;border-radius:50%;background:var(--accent-bg);}
+.ci-text .k{font-size:12px;color:var(--muted);letter-spacing:3px;margin-bottom:6px;}
+.ci-text .v{font-size:15px;color:var(--ink-2);font-weight:500;line-height:1.6;}
+.ci-text .v small{display:block;font-size:12px;color:var(--muted-2);margin-top:4px;font-weight:400;letter-spacing:1px;}
+.contact-form{background:var(--paper);border:1px solid var(--line);padding:36px 32px;box-shadow:var(--shadow-sm);}
+.contact-form h3{font-family:"Noto Serif SC",serif;font-size:22px;font-weight:900;color:var(--ink-2);margin-bottom:8px;}
+.contact-form .hint{font-size:13px;color:var(--muted);margin-bottom:24px;}
+.form-row{margin-bottom:18px;}
+.form-row label{display:block;font-size:13px;color:var(--ink-3);margin-bottom:8px;font-weight:500;letter-spacing:1px;}
+.form-row label .req{color:var(--accent);}
+.form-row input,.form-row textarea,.form-row select{width:100%;padding:12px 14px;font-size:15px;font-family:inherit;border:1px solid var(--line-2);border-radius:3px;background:var(--soft);transition:border-color .3s,background .3s;color:var(--ink-2);}
+.form-row input:focus,.form-row textarea:focus,.form-row select:focus{outline:none;border-color:var(--accent);background:#fff;}
+.form-row textarea{resize:vertical;min-height:100px;}
+.form-submit{width:100%;padding:15px;font-size:15px;}
+
+/* ============ 页脚 ============ */
+.footer{background:#1a1f23;color:rgba(255,255,255,.6);padding:60px 0 30px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1);}
+.footer-brand .fn{font-family:"Noto Serif SC",serif;font-size:20px;font-weight:900;color:#fff;letter-spacing:2px;margin-bottom:12px;}
+.footer-brand .fe{font-size:10px;letter-spacing:3px;color:rgba(255,255,255,.4);margin-bottom:16px;}
+.footer-brand p{font-size:13px;line-height:1.8;}
+.footer-col h4{font-size:14px;color:#fff;margin-bottom:16px;letter-spacing:2px;font-weight:700;}
+.footer-col a{display:block;font-size:13px;padding:6px 0;transition:color .3s;}
+.footer-col a:hover{color:var(--accent-2);}
+.footer-bottom{padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:12px;flex-wrap:wrap;gap:12px;}
+.footer-bottom a{color:var(--accent-2);}
+
+/* ============ 回到顶部 ============ */
+.totop{position:fixed;right:24px;bottom:24px;width:48px;height:48px;background:var(--ink-2);color:#fff;border:none;border-radius:50%;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:translateY(20px);transition:all .3s;z-index:900;box-shadow:var(--shadow-md);}
+.totop.show{opacity:1;visibility:visible;transform:none;}
+.totop:hover{background:var(--accent);}
+
+/* ============ 响应式 ============ */
+@media(max-width:960px){
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:40px;}
+  .talent-equip,.sub-core-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px;}
+  .flow-steps{grid-template-columns:1fr 1fr;gap:30px 0;}
+  .flow-step:not(:last-child)::after{display:none;}
+}
+@media(max-width:768px){
+  .nav-menu{position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(26,31,35,.97);backdrop-filter:blur(16px);flex-direction:column;align-items:stretch;padding:16px 24px;gap:4px;transform:translateY(-150%);transition:transform .4s;height:auto;}
+  .nav-menu.open{transform:none;}
+  .nav-menu a{color:rgba(255,255,255,.85);padding:14px 16px;border-radius:4px;}
+  .nav.scrolled .nav-menu a{color:rgba(255,255,255,.85);}
+  .nav-menu a:hover{background:rgba(255,255,255,.08);color:#fff;}
+  .nav.scrolled .nav-menu a:hover{color:#fff;background:rgba(255,255,255,.08);}
+  .nav-cta{text-align:center;margin-top:8px;}
+  .nav-toggle{display:flex;}
+  .section{padding:70px 0;}
+  .sec-head{margin-bottom:40px;}
+  .stats-row{grid-template-columns:1fr 1fr;}
+  .footer-top{grid-template-columns:1fr;gap:28px;}
+  .hero-inner{padding:110px 20px 70px;}
+  .container{padding:0 20px;}
+  .flow-steps{grid-template-columns:1fr;}
+  .biz-grid{grid-template-columns:1fr;}
+  .case-grid{grid-template-columns:1fr;}
+}
+@media(max-width:480px){
+  .stats-row{grid-template-columns:1fr 1fr;gap:10px;}
+  .stat-card{padding:20px 14px;}
+  .stat-card .n{font-size:36px;}
+  .hero-tags{grid-template-columns:1fr;}
+  .qual-grid{grid-template-columns:1fr 1fr;}
+  .related-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 导航栏 ============ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-brand">
+      <img src="assets/logo.png" class="nav-logo" alt="江苏众拓 ALLTOP">
+      <div class="name">
+        <span class="cn">江苏众拓</span>
+        <span class="en">ALLTOP · JIANGSU</span>
+      </div>
+    </a>
+    <div class="nav-menu" id="navMenu">
+      <a href="#hero" class="active">首页</a>
+      <a href="#about">集团概况</a>
+      <a href="#business">业务领域</a>
+      <a href="#strength">资质实力</a>
+      <a href="#subs">直属企业</a>
+      <a href="#cases">典型案例</a>
+      <a href="#quality">质量服务</a>
+      <a href="#contact" class="nav-cta">联系我们</a>
+    </div>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ============ Hero ============ -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow reveal">SINCE 2007 · 江苏淮安 · 苏北五市</div>
+    <h1 class="reveal d1">江苏众拓<br><span class="accent">项目代理咨询</span></h1>
+    <div class="hero-en reveal d1">JIANGSU ZHONGTUO PROJECT AGENCY CONSULTING CO., LTD.</div>
+    <div class="hero-slogan reveal d2">
+      <div class="cn">做投资者的「项目部」</div>
+      <div class="sub">一站式 · 全流程 · 项目审批核准咨询服务平台</div>
+    </div>
+    <div class="hero-tags reveal d3">
+      <div class="hero-tag">项目审批代理服务</div>
+      <div class="hero-tag">项目咨询报告编制</div>
+      <div class="hero-tag">房地产 / 土地 / 资产评估</div>
+      <div class="hero-tag">工程测绘与地理信息</div>
+      <div class="hero-tag">国土空间规划编制</div>
+      <div class="hero-tag">土地整治与复垦</div>
+      <div class="hero-tag">林业调查与服务</div>
+      <div class="hero-tag">社会稳定风险评估</div>
+    </div>
+    <div class="hero-actions reveal d4">
+      <a href="#business" class="btn btn-primary">了解业务</a>
+      <a href="#contact" class="btn btn-ghost">联系我们</a>
+    </div>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- ============ 集团概况 ============ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">ABOUT US</div>
+      <h2 class="sec-title">集团<span class="accent">概况</span></h2>
+      <p class="sec-sub">深耕土地服务近二十年 · 综合性专业服务集团</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>江苏众拓是一家具有多年项目代理咨询经验的<span class="key">专业咨询机构</span>，致力于为客户项目审批核准提供<b>"一站式"、"全流程"</b>咨询服务，业务覆盖淮安、宿迁、盐城、扬州、连云港等苏北五市。</p>
+        <p>公司现有专业咨询人员 <span class="key">90 多人</span>，其中国家注册师 <span class="key">35 人</span>、中高级职称 <span class="key">20 人</span>，旗下拥有评估造价、测绘规划两大核心板块及 6 家直属企业，是政府招商引资的得力助手、投资者的"项目部"。</p>
+        <div class="about-vision">
+          <div class="tx">成为投资者的<b>「项目部」</b>，打造项目审批咨询服务平台，做政府招商引资的得力助手。</div>
+        </div>
+      </div>
+      <div class="stats-row reveal d2">
+        <div class="stat-card"><div class="n" data-count="90">0<small>+</small></div><div class="l">专业人员</div></div>
+        <div class="stat-card"><div class="n" data-count="35">0</div><div class="l">国家注册师</div></div>
+        <div class="stat-card"><div class="n" data-count="6">0</div><div class="l">直属企业</div></div>
+        <div class="stat-card"><div class="n" data-count="19">0<small>年</small></div><div class="l">深耕历程</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 业务领域 ============ -->
+<section class="section alt" id="business">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">CORE SERVICES</div>
+      <h2 class="sec-title">业务<span class="accent">领域</span></h2>
+      <p class="sec-sub">项目全流程一站式服务 · 六大阶段</p>
+    </div>
+    <div class="bs-grid">
+      <div class="bs-card reveal"><div class="bs-num">01</div><div class="bs-title">技术报告编制</div><div class="bs-desc">项目建议书、可研、稳评、环评等前期技术报告与评价</div></div>
+      <div class="bs-card reveal d1"><div class="bs-num">02</div><div class="bs-title">审批代理</div><div class="bs-desc">用地预审、立项、施工、验收全流程手续代理</div></div>
+      <div class="bs-card reveal d2"><div class="bs-num">03</div><div class="bs-title">测绘与地理信息</div><div class="bs-desc">工程测量、地籍测绘、不动产测绘、地下管线探测</div></div>
+      <div class="bs-card reveal"><div class="bs-num">04</div><div class="bs-title">评估服务</div><div class="bs-desc">房地产、土地、资产评估及工程造价咨询</div></div>
+      <div class="bs-card reveal d1"><div class="bs-num">05</div><div class="bs-title">规划与土地整治</div><div class="bs-desc">国土空间规划、用地报批、土地整治与复垦设计</div></div>
+      <div class="bs-card reveal d2"><div class="bs-num">06</div><div class="bs-title">竣工验收与林业</div><div class="bs-desc">各类验收、林地占用、林木采伐、工程跟踪审计</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 资质实力 ============ -->
+<section class="section" id="strength">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">QUALIFICATIONS</div>
+      <h2 class="sec-title">资质<span class="accent">实力</span></h2>
+      <p class="sec-sub">12 项核心资质 · 资深专业团队 · 精良技术装备</p>
+    </div>
+
+    <!-- 测绘规划板块资质 -->
+    <div class="qual-block reveal">
+      <div class="qual-block-title">江苏众拓测绘有限公司 <span class="cnt">— 7 项核心资质 + ISO 三体系</span></div>
+      <div class="qual-grid">
+        <div class="qual-item"><div class="lvl">甲级</div><div class="nm">测绘资质（互联网地图服务）</div><div class="issuer">甲测资字 32101867 · 江苏省自然资源厅</div></div>
+        <div class="qual-item"><div class="lvl">乙级</div><div class="nm">测绘资质（工程测量/界线与不动产/地理信息）</div><div class="issuer">乙测资字 32508142</div></div>
+        <div class="qual-item"><div class="lvl">乙级</div><div class="nm">城乡规划编制</div><div class="issuer">苏自资规乙字 26320083 · 有效期至 2026.12.31</div></div>
+        <div class="qual-item"><div class="lvl">壹级</div><div class="nm">土地整治规划设计</div><div class="issuer">Z1125 · 有效期至 2028.12.31</div></div>
+        <div class="qual-item"><div class="lvl">ISO</div><div class="nm">ISO 9001 质量管理体系</div><div class="issuer">有效期至 2027.10.24</div></div>
+        <div class="qual-item"><div class="lvl">ISO</div><div class="nm">ISO 14001 环境管理体系</div><div class="issuer">有效期至 2027.10.24</div></div>
+        <div class="qual-item"><div class="lvl">ISO</div><div class="nm">ISO 45001 职业健康安全</div><div class="issuer">有效期至 2027.10.24</div></div>
+      </div>
+    </div>
+
+    <!-- 评估造价板块资质 -->
+    <div class="qual-block reveal d1">
+      <div class="qual-block-title">江苏众拓土地房地产资产评估造价咨询有限公司 <span class="cnt">— 4 项核心资质</span></div>
+      <div class="qual-grid">
+        <div class="qual-item"><div class="lvl">壹级</div><div class="nm">房地产估价资质</div><div class="issuer">苏建房估备【壹】淮安00015 · 江苏省住建厅</div></div>
+        <div class="qual-item"><div class="lvl">专业</div><div class="nm">土地估价资质</div><div class="issuer">苏土估备字【2022】0016号 · 江苏省自然资源厅</div></div>
+        <div class="qual-item"><div class="lvl">专业</div><div class="nm">资产评估资质</div><div class="issuer">淮财资【2025】18号 · 淮安市财政局</div></div>
+        <div class="qual-item"><div class="lvl">专业</div><div class="nm">工程造价咨询资质</div><div class="issuer">淮安市房屋征收估价机构名录入库</div></div>
+      </div>
+    </div>
+
+    <!-- 集团资质 -->
+    <div class="qual-block reveal d2">
+      <div class="qual-block-title">集团本部 <span class="cnt">— 社会稳定风险评估</span></div>
+      <div class="qual-grid">
+        <div class="qual-item"><div class="lvl">专业</div><div class="nm">社会稳定风险评估资质</div><div class="issuer">项目稳评编制报批及使用评估</div></div>
+      </div>
+    </div>
+
+    <!-- 人才结构 + 技术装备 -->
+    <div class="talent-equip">
+      <div class="te-box reveal">
+        <div class="lbl">人才结构</div>
+        <div class="te-row"><span class="k">集团专业人员</span><span class="v">90<small>+</small></span></div>
+        <div class="te-row"><span class="k">国家注册师</span><span class="v">35<small>人</small></span></div>
+        <div class="te-row"><span class="k">中高级职称</span><span class="v">20<small>人</small></span></div>
+        <div class="te-row"><span class="k">房地产估价师</span><span class="v">15<small>人</small></span></div>
+        <div class="te-row"><span class="k">土地估价师</span><span class="v">10<small>人</small></span></div>
+        <div class="te-row"><span class="k">测绘工程师</span><span class="v">14<small>人</small></span></div>
+      </div>
+      <div class="te-box reveal d1">
+        <div class="lbl">技术装备</div>
+        <div class="te-row"><span class="k">GNSS 接收机</span><span class="v txt">南方 S82T-GPS</span></div>
+        <div class="te-row"><span class="k">全站仪</span><span class="v txt">拓普康 / 南方</span></div>
+        <div class="te-row"><span class="k">无人机系统</span><span class="v txt">大疆 Phantom 4 RTK</span></div>
+        <div class="te-row"><span class="k">专业软件</span><span class="v txt">南方 CASS 8.0 / V9.0</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 直属企业 ============ -->
+<section class="section alt" id="subs">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">SUBSIDIARIES</div>
+      <h2 class="sec-title">直属<span class="accent">企业</span></h2>
+      <p class="sec-sub">两大核心板块 · 六家直属及合作企业</p>
+    </div>
+    <p class="sub-intro reveal">集团以评估造价、测绘规划两大核心板块为支柱，旗下拥有两家全资核心子公司，并在全省范围内与多家专业服务机构建立稳定合作关系，整合咨询服务资源，提供全链条专业解决方案。</p>
+
+    <!-- 两大核心子公司 -->
+    <div class="sub-core-grid">
+      <div class="sub-card reveal">
+        <div class="sub-badge">— 评估造价板块 —</div>
+        <div class="sub-name">江苏众拓土地房地产资产评估造价咨询有限公司</div>
+        <div class="sub-meta">
+          <div class="item"><div class="k">成立</div><div class="v">2007</div></div>
+          <div class="item"><div class="k">注册资本</div><div class="v">1000万</div></div>
+          <div class="item"><div class="k">员工</div><div class="v">28人</div></div>
+          <div class="item"><div class="k">核心资质</div><div class="v">4项</div></div>
+        </div>
+        <div class="sub-qlbl">■ 统一社会信用代码</div>
+        <div style="font-size:13px;color:var(--ink-3);font-family:monospace;">913208007986173321</div>
+      </div>
+      <div class="sub-card right reveal d1">
+        <div class="sub-badge">— 测绘规划板块 —</div>
+        <div class="sub-name">江苏众拓测绘有限公司</div>
+        <div class="sub-meta">
+          <div class="item"><div class="k">成立</div><div class="v">2010</div></div>
+          <div class="item"><div class="k">注册资本</div><div class="v">1000万</div></div>
+          <div class="item"><div class="k">员工</div><div class="v">26人</div></div>
+          <div class="item"><div class="k">核心资质</div><div class="v">9项</div></div>
+        </div>
+        <div class="sub-qlbl">■ 统一社会信用代码</div>
+        <div style="font-size:13px;color:var(--ink-3);font-family:monospace;">9132089155376844XP</div>
+      </div>
+    </div>
+
+    <!-- 关联直属企业 -->
+    <div class="reveal d2" style="margin-top:48px;">
+      <div class="qual-block-title" style="margin-bottom:20px;">集团直属及合作企业 <span class="cnt">— 6 家</span></div>
+      <div class="related-grid">
+        <div class="related-card"><div class="ic">测</div><div class="nm">淮安纵横测绘有限公司</div></div>
+        <div class="related-card"><div class="ic">评</div><div class="nm">江苏苏瑞土地房地产评估有限公司</div></div>
+        <div class="related-card"><div class="ic">代</div><div class="nm">淮安市纵横土地登记代理咨询有限公司</div></div>
+        <div class="related-card"><div class="ic">勘</div><div class="nm">江苏众拓勘察测绘有限公司</div></div>
+        <div class="related-card"><div class="ic">环</div><div class="nm">江苏新清源环保有限公司淮安分公司</div></div>
+        <div class="related-card"><div class="ic">造</div><div class="nm">江苏富华工程造价咨询有限公司淮安分公司</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 典型案例 ============ -->
+<section class="section" id="cases">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">TYPICAL CASES</div>
+      <h2 class="sec-title">典型<span class="accent">案例</span></h2>
+      <p class="sec-sub">60+ 代表性项目 · 以专业服务赢得信赖</p>
+    </div>
+    <div class="case-filter reveal">
+      <button class="case-btn active" data-filter="all">全部</button>
+      <button class="case-btn" data-filter="代理">审批代理</button>
+      <button class="case-btn" data-filter="稳评">稳评</button>
+      <button class="case-btn" data-filter="房评">房产评估</button>
+      <button class="case-btn" data-filter="土评">土地评估</button>
+      <button class="case-btn" data-filter="资评">资产评估</button>
+      <button class="case-btn" data-filter="测绘">工程测绘</button>
+      <button class="case-btn" data-filter="不动产">不动产</button>
+      <button class="case-btn" data-filter="规划">规划用地</button>
+      <button class="case-btn" data-filter="复垦">复垦林业</button>
+    </div>
+    <div class="case-grid" id="caseGrid">
+      <!-- 审批代理 11 -->
+      <div class="case-card reveal" data-cat="代理"><span class="case-tag">代理</span><div class="case-type">▎项目审批代理</div><div class="case-name">洪泽通用码头用地报批</div><div class="case-data">码头项目用地手续全程代理报批</div></div>
+      <div class="case-card reveal d1" data-cat="代理"><span class="case-tag">代理</span><div class="case-type">▎项目审批代理</div><div class="case-name">中石油丁集加油站项目全程代理</div><div class="case-data">加油站项目全流程审批代理</div></div>
+      <div class="case-card reveal d2" data-cat="代理"><span class="case-tag">代理</span><div class="case-type">▎项目审批代理</div><div class="case-name">淮安市韩侯大道次高压A燃气管道项目</div><div class="case-data">燃气管道项目审批代理</div></div>
+      <div class="case-card reveal" data-cat="代理"><span class="case-tag">代理</span><div class="case-type">▎项目审批代理</div><div class="case-name">淮安西游产业集团西游乐园项目立项</div><div class="case-data">西游记文化产业园立项手续办理</div></div>
+      <div class="case-card reveal d1" data-cat="代理"><span class="case-tag">代理</span><div class="case-type">▎项目审批代理</div><div class="case-name">金湖苏宁易购广场项目发改委立项</div><div class="case-data">商业广场立项申请服务</div></div>
+      <div class="case-card reveal d2" data-cat="代理"><span class="case-tag">代理</span><div class="case-type">▎项目审批代理</div><div class="case-name">江苏国信淮安第二燃气发电土地项目</div><div class="case-data">燃气发电项目用地手续办理</div></div>
+      <div class="case-card reveal" data-cat="代理"><span class="case-tag">代理</span><div class="case-type">▎项目审批代理</div><div class="case-name">淮安市里运河景区道路及慢行系统</div><div class="case-data">土地预审、立项手续办理</div></div>
+      <div class="case-card reveal" data-cat="代理"><span class="case-tag">代理</span><div class="case-type">▎项目审批代理</div><div class="case-name">龙宫大白鲸、儿童嬉水乐园前期报批</div><div class="case-data">西游记文化产业园子项目报批</div></div>
+      <div class="case-card reveal d1" data-cat="代理"><span class="case-tag">代理</span><div class="case-type">▎项目审批代理</div><div class="case-name">淮安港淮阴港区陆基水上油气站</div><div class="case-data">许渡作业区项目全程代理</div></div>
+      <div class="case-card reveal d2" data-cat="代理"><span class="case-tag">代理</span><div class="case-type">▎项目审批代理</div><div class="case-name">淮安区体育中心南侧土地分割转让</div><div class="case-data">国有土地使用证办理全程代理</div></div>
+      <div class="case-card reveal" data-cat="代理"><span class="case-tag">代理</span><div class="case-type">▎项目审批代理</div><div class="case-name">淮盐道路和刘桥道路用地预审</div><div class="case-data">淮安盐化新材料产业园区道路全程代理</div></div>
+
+      <!-- 稳评 8 -->
+      <div class="case-card reveal" data-cat="稳评"><span class="case-tag">稳评</span><div class="case-type">▎社会稳定风险评估</div><div class="case-name">淮安区博里镇风电项目土地报征稳评</div><div class="case-data">风电项目征地社会稳定风险评估</div></div>
+      <div class="case-card reveal d1" data-cat="稳评"><span class="case-tag">稳评</span><div class="case-type">▎社会稳定风险评估</div><div class="case-name">金湖向东风电场项目稳评</div><div class="case-data">大型新能源项目社会稳定风险评估</div></div>
+      <div class="case-card reveal d2" data-cat="稳评"><span class="case-tag">稳评</span><div class="case-type">▎社会稳定风险评估</div><div class="case-name">苏淮高新区危险危废处置中心项目</div><div class="case-data">危废处置项目稳评</div></div>
+      <div class="case-card reveal" data-cat="稳评"><span class="case-tag">稳评</span><div class="case-type">▎社会稳定风险评估</div><div class="case-name">江苏国信淮安复兴镇风电场项目稳评</div><div class="case-data">风电场征地项目稳评</div></div>
+      <div class="case-card reveal d1" data-cat="稳评"><span class="case-tag">稳评</span><div class="case-type">▎社会稳定风险评估</div><div class="case-name">淮安区苏嘴顺河风电场征地项目稳评</div><div class="case-data">风电场征地稳评</div></div>
+      <div class="case-card reveal d2" data-cat="稳评"><span class="case-tag">稳评</span><div class="case-type">▎社会稳定风险评估</div><div class="case-name">中船重工金湖县风力发电项目稳评</div><div class="case-data">风力发电项目稳评</div></div>
+      <div class="case-card reveal" data-cat="稳评"><span class="case-tag">稳评</span><div class="case-type">▎社会稳定风险评估</div><div class="case-name">淮安西游产业集团有限公司稳评</div><div class="case-data">集团项目社会稳定风险评估</div></div>
+      <div class="case-card reveal d1" data-cat="稳评"><span class="case-tag">稳评</span><div class="case-type">▎社会稳定风险评估</div><div class="case-name">淮阴区赵集镇天然气分布式能源项目</div><div class="case-data">天然气能源项目稳评</div></div>
+
+      <!-- 房地产评估 4 -->
+      <div class="case-card reveal" data-cat="房评"><span class="case-tag">房评</span><div class="case-type">▎司法鉴定评估</div><div class="case-name">淮阴区华鑫木业集散中心</div><div class="case-data">评估建筑面积超 <b>1.2 万㎡</b><br>评估总价超 <b>4000 万元</b></div></div>
+      <div class="case-card reveal d1" data-cat="房评"><span class="case-tag">房评</span><div class="case-type">▎房屋征收拆迁</div><div class="case-name">怡康雅苑西地块（长江路街道提档升级）</div><div class="case-data">建面超 <b>1.2 万㎡</b>，土地约 <b>3 万㎡</b><br>评估总价超 <b>2500 万元</b></div></div>
+      <div class="case-card reveal d2" data-cat="房评"><span class="case-tag">房评</span><div class="case-type">▎抵押评估</div><div class="case-name">金湖县淮金线东侧商业房地产</div><div class="case-data">建面近 <b>4 万㎡</b>，土地超 <b>5 万㎡</b><br>评估总价超 <b>2 亿元</b></div></div>
+      <div class="case-card reveal" data-cat="房评"><span class="case-tag">房评</span><div class="case-type">▎涉税评估</div><div class="case-name">淮安金悦商置中心（金地中心）</div><div class="case-data">建面超 <b>5 万㎡</b>，土地超 <b>5 万㎡</b><br>评估总价超 <b>2.5 亿元</b></div></div>
+
+      <!-- 土地评估 3 -->
+      <div class="case-card reveal" data-cat="土评"><span class="case-tag">土评</span><div class="case-type">▎土地储备专项债</div><div class="case-name">洪泽区土地评估项目</div><div class="case-data">348 省道南侧、北海路西侧<br>土地超 <b>12 万㎡</b>，评估超 <b>6 亿元</b></div></div>
+      <div class="case-card reveal d1" data-cat="土评"><span class="case-tag">土评</span><div class="case-type">▎司法鉴定</div><div class="case-name">涟水永兴房地产开发有限公司</div><div class="case-data">淮浦南路西侧、今世缘大道北侧<br>土地近 <b>1 万㎡</b>，评估超 <b>1500 万元</b></div></div>
+      <div class="case-card reveal d2" data-cat="土评"><span class="case-tag">土评</span><div class="case-type">▎资产入账</div><div class="case-name">淮安市融昇仓储物流有限公司</div><div class="case-data">清江浦区南苑路北侧、勤政路东侧<br>土地近 <b>10 万㎡</b>，评估超 <b>12 亿元</b></div></div>
+
+      <!-- 资产评估 4 -->
+      <div class="case-card reveal" data-cat="资评"><span class="case-tag">资评</span><div class="case-type">▎资产转让</div><div class="case-name">富仕达大厦资产评估项目</div><div class="case-data">总价值超 <b>1 亿元</b></div></div>
+      <div class="case-card reveal d1" data-cat="资评"><span class="case-tag">资评</span><div class="case-type">▎破产清算</div><div class="case-name">淮安卓旺电路科技有限公司</div><div class="case-data">破产清算项目，总价值超 <b>200 万元</b></div></div>
+      <div class="case-card reveal d2" data-cat="资评"><span class="case-tag">资评</span><div class="case-type">▎资产出租</div><div class="case-name">淮安市警察培训学校</div><div class="case-data">拟出租面积约 <b>1 万㎡</b><br>年租金超 <b>100 万元</b></div></div>
+      <div class="case-card reveal" data-cat="资评"><span class="case-tag">资评</span><div class="case-type">▎股权评估</div><div class="case-name">淮安尚庐文化发展有限公司</div><div class="case-data">企业股权评估项目</div></div>
+
+      <!-- 工程测绘 4 -->
+      <div class="case-card reveal" data-cat="测绘"><span class="case-tag">测绘</span><div class="case-type">▎地下管线探测</div><div class="case-name">江海污水处理厂配套管网（西线）</div><div class="case-data">市政污水处理管网建设精准测绘数据支撑</div></div>
+      <div class="case-card reveal d1" data-cat="测绘"><span class="case-tag">测绘</span><div class="case-type">▎工程测绘</div><div class="case-name">淮河入海水道二期工程</div><div class="case-data"><b>国家重大水利工程</b><br>10 标 / 12 标全程模型采集</div></div>
+      <div class="case-card reveal d2" data-cat="测绘"><span class="case-tag">测绘</span><div class="case-type">▎管理范围划定</div><div class="case-name">淮安区 + 泗阳县河湖管理范围划定</div><div class="case-data">河湖和水利工程管理范围划定、界桩预制埋设</div></div>
+      <div class="case-card reveal" data-cat="测绘"><span class="case-tag">测绘</span><div class="case-type">▎地形放线测量</div><div class="case-name">清河盐河生态科技城 + 洪泽水资源地块</div><div class="case-data">试放线测量、地下水资源勘查监测</div></div>
+
+      <!-- 不动产 3 -->
+      <div class="case-card reveal" data-cat="不动产"><span class="case-tag">不动产</span><div class="case-type">▎房地一体确权登记</div><div class="case-name">淮阴区刘老庄镇房地一体确权登记颁证</div><div class="case-data">政府批量办理不动产权证全流程技术服务</div></div>
+      <div class="case-card reveal d1" data-cat="不动产"><span class="case-tag">不动产</span><div class="case-type">▎批量发证系统</div><div class="case-name">淮阴区房地一体登记批量发证系统</div><div class="case-data">成果数据入库，发证自动化 + 数据规范化</div></div>
+      <div class="case-card reveal d2" data-cat="不动产"><span class="case-tag">不动产</span><div class="case-type">▎政府资产办证代理</div><div class="case-name">市本级政府资产不动产办证代理</div><div class="case-data">协助政府部门完成资产登记办证</div></div>
+
+      <!-- 规划用地 5 -->
+      <div class="case-card reveal" data-cat="规划"><span class="case-tag">规划</span><div class="case-type">▎国土空间规划</div><div class="case-name">施河镇国土空间总体规划</div><div class="case-data">乡镇国土空间总体规划编制</div></div>
+      <div class="case-card reveal d1" data-cat="规划"><span class="case-tag">规划</span><div class="case-type">▎村庄规划</div><div class="case-name">新渡口街道村庄规划</div><div class="case-data">村庄规划编制</div></div>
+      <div class="case-card reveal d2" data-cat="规划"><span class="case-tag">规划</span><div class="case-type">▎用地报批</div><div class="case-name">白马湖"三岛奇遇记"土地转用</div><div class="case-data">景区项目土地转用报批</div></div>
+      <div class="case-card reveal" data-cat="规划"><span class="case-tag">规划</span><div class="case-type">▎土地征收专项</div><div class="case-name">清江浦区土地征收专项债券编制</div><div class="case-data">土地征收专项债券编制</div></div>
+      <div class="case-card reveal" data-cat="规划"><span class="case-tag">规划</span><div class="case-type">▎生态管控论证</div><div class="case-name">京杭运河生态空间管控论证</div><div class="case-data">生态管控区不可避让论证 + 成片开发方案</div></div>
+
+      <!-- 复垦林业 4 -->
+      <div class="case-card reveal" data-cat="复垦"><span class="case-tag">复垦</span><div class="case-type">▎临时用地复垦</div><div class="case-name">宁淮城际铁路复垦方案</div><div class="case-data">勘测定界 · 复垦方案编制 · 用地手续办理</div></div>
+      <div class="case-card reveal d1" data-cat="复垦"><span class="case-tag">复垦</span><div class="case-type">▎临时用地复垦</div><div class="case-name">潍宿高铁 + 长深高速弃土场复垦</div><div class="case-data">弃土场复垦编制 · 施工临时用地手续报批</div></div>
+      <div class="case-card reveal d2" data-cat="复垦"><span class="case-tag">林业</span><div class="case-type">▎林地占用</div><div class="case-name">宝应湖退还湖工程林地占用</div><div class="case-data">林地临时占用手续代理（一期）</div></div>
+      <div class="case-card reveal" data-cat="复垦"><span class="case-tag">林业</span><div class="case-type">▎林草湿荒调查</div><div class="case-name">淮安区 2025 年林草湿荒变更调查</div><div class="case-data">变更调查监测 + 造林绿化综合监测</div></div>
+    </div>
+    <div class="reveal" style="margin-top:40px;padding:24px 28px;background:var(--soft);border-left:3px solid var(--ink-2);font-size:15px;color:var(--ink-3);line-height:1.8;">
+      另含 <b style="color:var(--ink-2);">平桥乡镇规划编制</b>、<b style="color:var(--ink-2);">大王庄路网用地报批</b>、<b style="color:var(--ink-2);">东台方塘河闸用地报批</b>、<b style="color:var(--ink-2);">金南 110kV 输变电工程复垦咨询</b>、<b style="color:var(--ink-2);">张兴储气库老井封堵用地</b>、<b style="color:var(--ink-2);">淮沭河堆堤林木采伐</b> 等项目，集团累计代表性项目 <b style="color:var(--accent);font-size:20px;font-family:'Noto Serif SC',serif;">60+</b> 项。
+    </div>
+  </div>
+</section>
+
+<!-- ============ 质量与服务 ============ -->
+<section class="section alt" id="quality">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">QUALITY & SERVICE</div>
+      <h2 class="sec-title">质量与<span class="accent">服务</span></h2>
+      <p class="sec-sub">完善管理体系 · 三级审核制度 · 一站式服务流程</p>
+    </div>
+    <div class="qm-grid">
+      <div class="qm-card reveal"><div class="qm-icon"><i class="fas fa-shield-halved"></i></div><div class="qm-title">质量管理体系</div><div class="qm-desc">ISO 9001 体系认证保障</div></div>
+      <div class="qm-card reveal d1"><div class="qm-icon"><i class="fas fa-ruler-combined"></i></div><div class="qm-title">严格执行国标行标</div><div class="qm-desc">按国家及行业技术标准规范作业</div></div>
+      <div class="qm-card reveal d2"><div class="qm-icon"><i class="fas fa-clipboard-check"></i></div><div class="qm-title">三级审核制度</div><div class="qm-desc">编制、复核、审定，确保质量可靠</div></div>
+      <div class="qm-card reveal d3"><div class="qm-icon"><i class="fas fa-map-location-dot"></i></div><div class="qm-title">苏北五市全覆盖</div><div class="qm-desc">淮安、宿迁、盐城、扬州、连云港</div></div>
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:40px;font-family:'Noto Serif SC',serif;font-size:22px;font-weight:900;color:var(--accent);letter-spacing:4px;">替客户着想 · 为客户分忧</div>
+  </div>
+</section>
+
+<!-- ============ 联系我们 ============ -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">CONTACT</div>
+      <h2 class="sec-title">联系<span class="accent">我们</span></h2>
+      <p class="sec-sub">替客户着想 · 为客户分忧</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="ci-item">
+          <div class="ci-icon">◆</div>
+          <div class="ci-text"><div class="k">办公地址</div><div class="v">淮安市经济技术开发区迎宾大道 9 号<br>留学生创业园 2 楼<small>邮编 223005</small></div></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">☎</div>
+          <div class="ci-text"><div class="k">联系电话</div><div class="v">0517-83663008 · 0517-83921588<small>测绘公司 / 评估造价公司</small></div></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">✆</div>
+          <div class="ci-text"><div class="k">手机号码</div><div class="v">18932308886 · 18932308885</div></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">✉</div>
+          <div class="ci-text"><div class="k">电子邮箱</div><div class="v">6820616@qq.com</div></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">🏢</div>
+          <div class="ci-text"><div class="k">统一社会信用代码</div><div class="v" style="font-size:13px;font-family:monospace;">评估造价：913208007986173321<br>测绘：9132089155376844XP</div></div>
+        </div>
+      </div>
+      <form class="contact-form reveal d1" id="contactForm">
+        <h3>在线咨询</h3>
+        <p class="hint">留下您的需求，我们将尽快与您联系</p>
+        <div class="form-row">
+          <label>姓名 <span class="req">*</span></label>
+          <input type="text" name="name" required placeholder="请输入您的姓名">
+        </div>
+        <div class="form-row">
+          <label>联系电话 <span class="req">*</span></label>
+          <input type="tel" name="phone" required placeholder="请输入手机号码">
+        </div>
+        <div class="form-row">
+          <label>咨询业务</label>
+          <select name="service">
+            <option value="">请选择业务类型</option>
+            <option>项目审批代理服务</option>
+            <option>项目咨询报告编制</option>
+            <option>房地产评估</option>
+            <option>土地 / 资产评估</option>
+            <option>测绘与地理信息</option>
+            <option>国土空间规划</option>
+            <option>土地整治与复垦</option>
+            <option>林业服务</option>
+            <option>社会稳定风险评估</option>
+            <option>其他咨询</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>需求描述</label>
+          <textarea name="message" placeholder="请简要描述您的项目需求..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">提交咨询</button>
+        <p id="formMsg" style="margin-top:16px;font-size:14px;color:var(--accent);text-align:center;display:none;">✓ 感谢您的咨询！我们会尽快与您联系。</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="fn">江苏众拓项目代理咨询有限公司</div>
+        <div class="fe">JIANGSU ZHONGTUO PROJECT AGENCY CONSULTING CO., LTD.</div>
+        <p>综合性专业土地服务集团 · 始于 2007 年<br>做投资者的「项目部」<br>一站式 · 全流程 · 全链条专业服务<br>覆盖淮安 / 宿迁 / 盐城 / 扬州 / 连云港</p>
+      </div>
+      <div class="footer-col">
+        <h4>业务领域</h4>
+        <a href="#business">项目审批代理</a>
+        <a href="#business">咨询报告编制</a>
+        <a href="#business">房地产评估</a>
+        <a href="#business">土地/资产评估</a>
+        <a href="#business">测绘与地理信息</a>
+        <a href="#business">国土空间规划</a>
+      </div>
+      <div class="footer-col">
+        <h4>关于我们</h4>
+        <a href="#about">集团概况</a>
+        <a href="#strength">资质实力</a>
+        <a href="#subs">直属企业</a>
+        <a href="#cases">典型案例</a>
+        <a href="#quality">质量服务</a>
+      </div>
+      <div class="footer-col">
+        <h4>联系方式</h4>
+        <a href="tel:0517-83663008">☎ 0517-83663008</a>
+        <a href="tel:0517-83921588">☎ 0517-83921588</a>
+        <a href="tel:18932308886">✆ 18932308886</a>
+        <a href="mailto:6820616@qq.com">✉ 6820616@qq.com</a>
+        <a href="#contact">淮安经济技术开发区</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 江苏众拓项目代理咨询有限公司 · 版权所有 · SINCE 2007</div>
+      <div>苏ICP备XXXXXXXX号 · <a href="#">苏公网安备XXXXXXXXXXX号</a></div>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="toTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  const nav=document.getElementById('nav');
+  const navMenu=document.getElementById('navMenu');
+  const navToggle=document.getElementById('navToggle');
+  const toTop=document.getElementById('toTop');
+  const sections=document.querySelectorAll('section[id]');
+  const navLinks=document.querySelectorAll('.nav-menu a[href^="#"]');
+
+  function onScroll(){
+    const y=window.scrollY;
+    nav.classList.toggle('scrolled',y>50);
+    toTop.classList.toggle('show',y>600);
+    let cur='';
+    sections.forEach(s=>{if(y>=s.offsetTop-100)cur=s.id;});
+    navLinks.forEach(a=>{
+      a.classList.remove('active');
+      if(a.getAttribute('href')==='#'+cur)a.classList.add('active');
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  navToggle.addEventListener('click',()=>{
+    navToggle.classList.toggle('open');
+    navMenu.classList.toggle('open');
+  });
+  navLinks.forEach(a=>a.addEventListener('click',()=>{
+    navToggle.classList.remove('open');
+    navMenu.classList.remove('open');
+  }));
+
+  toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+  // 滚动渐入
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // 数字计数
+  const counters=document.querySelectorAll('.stat-card .n[data-count]');
+  const cio=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const el=e.target;
+        const target=parseInt(el.dataset.count,10);
+        const suffix=el.querySelector('small')?el.querySelector('small').outerHTML:'';
+        let cur=0;
+        const step=Math.max(1,Math.ceil(target/40));
+        const timer=setInterval(()=>{
+          cur+=step;
+          if(cur>=target){cur=target;clearInterval(timer);}
+          el.innerHTML=cur+suffix;
+        },30);
+        cio.unobserve(el);
+      }
+    });
+  },{threshold:0.5});
+  counters.forEach(c=>cio.observe(c));
+
+  // 案例筛选
+  const caseBtns=document.querySelectorAll('.case-btn');
+  const caseCards=document.querySelectorAll('.case-card');
+  caseBtns.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      caseBtns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f=btn.dataset.filter;
+      caseCards.forEach(card=>{
+        const show=(f==='all'||card.dataset.cat===f);
+        card.style.display=show?'flex':'none';
+        if(show){card.classList.remove('in');requestAnimationFrame(()=>card.classList.add('in'));}
+      });
+    });
+  });
+
+  // 表单
+  const form=document.getElementById('contactForm');
+  const formMsg=document.getElementById('formMsg');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    formMsg.style.display='block';
+    form.reset();
+    setTimeout(()=>{formMsg.style.display='none';},5000);
+  });
+})();
+</script>
+</body>
+</html>

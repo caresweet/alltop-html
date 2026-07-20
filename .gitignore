@@ -1,0 +1,36 @@
+# macOS 系统文件
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows 系统文件
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 编辑器 / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 日志文件
+*.log
+
+# 依赖目录
+node_modules/
+
+# Python（本地预览用）
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+venv/
+env/
+
+# 临时 / 缓存
+*.tmp
+.cache/
+*.bak
